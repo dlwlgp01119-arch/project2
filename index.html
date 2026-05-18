@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진로 설계 플랫폼 - 프로필 등록</title>
+    
+    <!-- 내부 CSS: 모든 스타일을 여기에 통합했습니다 -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* 사이드바 스타일 */
+        .sidebar {
+            width: 260px;
+            background-color: #1e293b;
+            color: #fff;
+            padding: 30px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .logo img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .logo h2 {
+            color: #38bdf8;
+            font-size: 24px;
+        }
+
+        .menu a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .menu a:hover, .menu a.active {
+            background-color: #334155;
+            color: #fff;
+        }
+
+        /* 메인 콘텐츠 스타일 */
+        .main-content {
+            flex: 1;
+            padding: 40px;
+        }
+
+        /* 상단 배너 디자인 (웹 이미지 주소 연결) */
+        .career-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 40px 30px;
+            border-radius: 12px;
+            color: white;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .career-banner h1 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .career-banner p {
+            color: #e2e8f0;
+        }
+
+        /* 폼 스타일 */
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-section {
+            margin-bottom: 35px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 25px;
+        }
+
+        .form-section:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .form-section h3 {
+            font-size: 18px;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-group label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #475569;
+        }
+
+        .input-group input, .input-group select {
+            padding: 11px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        /* 버튼 스타일 */
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 사이드바 -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&auto=format&fit=crop&q=80" alt="로고">
+                <h2>CareerPath</h2>
+            </div>
+            <nav class="menu">
+                <a href="#" class="active">📝 프로필/성적 입력</a>
+                <a href="#" onclick="alert('준비 중인 기능입니다.')">📊 진로 분석 리포트</a>
+                <a href="#" onclick="alert('준비 중인 기능입니다.')">🎯 추천 학과/직업</a>
+            </nav>
+        </aside>
+
+        <!-- 메인 콘텐츠 영역 -->
+        <main class="main-content">
+            <header class="career-banner">
+                <h1>학생 프로필 및 성적 등록</h1>
+                <p>진로 맞춤형 분석을 위해 정확한 정보를 입력해 주세요.</p>
+            </header>
+
+            <section class="form-container">
+                <form id="careerForm">
+                    <!-- 기본 정보 섹션 -->
+                    <div class="form-section">
+                        <h3>🏫 기본 학적 정보</h3>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="schoolName">학교명</label>
+                                <input type="text" id="schoolName" placeholder="예: 미래고등학교" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="grade">학년</label>
+                                <select id="grade" required>
+                                    <option value="">선택</option>
+                                    <option value="1">1학년</option>
+                                    <option value="2">2학년</option>
+                                    <option value="3">3학년</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="majorTrack">계열</label>
+                                <select id="majorTrack" required>
+                                    <option value="">선택</option>
+                                    <option value="general">일반(인문/자연)</option>
+                                    <option value="special">특성화/예체능</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 성적 정보 섹션 -->
+                    <div class="form-section">
+                        <h3>📊 주요 과목 내신 등급 (최근 학기)</h3>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="scoreKorean">국어</label>
+                                <input type="number" id="scoreKorean" min="1" max="9" placeholder="1~9등급" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="scoreMath">수학</label>
+                                <input type="number" id="scoreMath" min="1" max="9" placeholder="1~9등급" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="scoreEnglish">영어</label>
+                                <input type="number" id="scoreEnglish" min="1" max="9" placeholder="1~9등급" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 진로 관심사 섹션 -->
+                    <div class="form-section">
+                        <h3>🎯 희망 진로 분야</h3>
+                        <div class="input-group">
+                            <label for="interest">가장 관심 있는 분야나 직업을 적어주세요</label>
+                            <input type="text" id="interest" placeholder="예: AI 개발자, 마케터, 간호사 등">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">정보 저장 및 진로 분석하기</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- 내부 스크립트: 제어 기능을 여기에 통합했습니다 -->
+    <script>
+        document.getElementById('careerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const schoolName = document.getElementById('schoolName').value;
+            const grade = document.getElementById('grade').value;
+            const majorTrack = document.getElementById('majorTrack').value;
+            
+            const scoreKorean = parseInt(document.getElementById('scoreKorean').value);
+            const scoreMath = parseInt(document.getElementById('scoreMath').value);
+            const scoreEnglish = parseInt(document.getElementById('scoreEnglish').value);
+            
+            const interest = document.getElementById('interest').value;
+
+            // 간단한 등급 유효성 검사
+            if (scoreKorean < 1 || scoreKorean > 9 || 
+                scoreMath < 1 || scoreMath > 9 || 
+                scoreEnglish < 1 || scoreEnglish > 9) {
+                alert('성적은 1등급에서 9등급 사이로 입력해 주세요.');
+                return;
+            }
+
+            const studentData = {
+                school: schoolName,
+                grade: grade,
+                track: majorTrack,
+                scores: { korean: scoreKorean, math: scoreMath, english: scoreEnglish },
+                interest: interest
+            };
+
+            console.log('입력된 진로 데이터:', studentData);
+            alert(`${schoolName} ${grade}학년 프로필 저장 완료!\n콘솔창(F12)에서 데이터를 확인하실 수 있습니다.`);
+        });
+    </script>
+</body>
+</html>
